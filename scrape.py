@@ -11,7 +11,7 @@ from tkinter import ttk
 driver = webdriver.Chrome()
 
 # Create the Excel workbook
-workbook = openpyxl.Workbook()
+workbook = openpyxl.Workbook() 
 sheet = workbook.active
 sheet.title = 'Scraped Data'
 sheet.append(['Title', 'Price'])
