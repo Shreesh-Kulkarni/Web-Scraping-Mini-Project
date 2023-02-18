@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import filedialog
 import pandas as pd
-from stockscrape import scrape_data
+from cryptoscrape import scrape_data
 def create_dataframe():
     d = scrape_data()
     df = pd.DataFrame.from_dict(d, orient='index', columns=['Price', 'Market Cap', 'Volume', 'Circulating Supply'])
