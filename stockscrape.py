@@ -20,9 +20,18 @@ try:
             value=[]
             namexpath=f'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[4]/table/tbody/tr[{num[k]}]/td[3]/div/a/div/div/p'
             pricexpath=f'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[4]/table/tbody/tr[{num[k]}]/td[4]/div/a'
+            #hourchangexpath=f'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[4]/table/tbody/tr[{num[k]}]/td[6]/span'
+            mcapxpath=f'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[4]/table/tbody/tr[{num[k]}]/td[8]/p'
+            volxpath=f'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[4]/table/tbody/tr[{num[k]}]/td[9]/div/a/p'
+            circxpath=f'//*[@id="__next"]/div/div[1]/div[2]/div/div[1]/div[4]/table/tbody/tr[{num[k]}]/td[10]/div/div[1]/p'
             cname=i.find_element(By.XPATH,namexpath).text
             cprice=i.find_element(By.XPATH,pricexpath).text
-            value.append(cprice)
+            mcap=i.find_element(By.XPATH,mcapxpath).text
+            vol=i.find_element(By.XPATH,volxpath).text
+            circ=i.find_element(By.XPATH,circxpath).text
+
+            #hchange=i.find_element(By.XPATH,hourchangexpath).text
+            value.extend([cprice,mcap,vol,circ])
             d[cname]=value
             k+=1
 except IndexError:
