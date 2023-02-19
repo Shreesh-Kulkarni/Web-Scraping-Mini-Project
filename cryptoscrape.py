@@ -6,16 +6,16 @@ import time
 # Wait for the element to be present
 
 import pandas as pd
-def scrape_data():
+def scrape_data(c):
     url='https://coinmarketcap.com/'
     driver=webdriver.Chrome()
     driver.get(url)
     time.sleep(20)
     nameclass='cmc-link'
     name=driver.find_elements(By.CLASS_NAME,nameclass)
-    num=[j for j in range(1,15)]
+    num=[j for j in range(1,c+1)]
     k=0
-    d={}
+    d=[]
     try:
         for i in name:
                 value=[]
@@ -33,11 +33,13 @@ def scrape_data():
                 #hchange=i.find_element(By.XPATH,hourchangexpath)
 
                 #hchange=i.find_element(By.XPATH,hourchangexpath).text
-                value.extend([cprice,mcap,vol,circ])
-                d[cname]=value
+                value.extend([cname,cprice,mcap,vol,circ])
+                d.append(value)
                 k+=1
     except IndexError:
-        return d
+        pass
+    df = pd.DataFrame(d, columns=['Name', 'Price', 'Market Cap', 'Volume', 'Circulating Supply'])
+    return df
 
 
 #

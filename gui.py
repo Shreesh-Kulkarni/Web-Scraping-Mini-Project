@@ -3,34 +3,32 @@ from tkinter import messagebox
 from tkinter import filedialog
 import pandas as pd
 from cryptoscrape import scrape_data
-def create_dataframe():
-    d = scrape_data()
-    df = pd.DataFrame.from_dict(d, orient='index', columns=['Price', 'Market Cap', 'Volume', 'Circulating Supply'])
-    return df
+import tkinter as tk
+from tkinter import filedialog
 
 def export_to_excel():
-    df = create_dataframe()
-    filepath = filedialog.asksaveasfilename(defaultextension='.xlsx')
-    df.to_excel(filepath)
+    # Get input value for c from the user
+    c = int(input_entry.get())
+    # Scrape data from CoinMarketCap
+    df = scrape_data(c)
+    # Get filename to save Excel file
+    filename = filedialog.asksaveasfilename(defaultextension='.xlsx')
+    # Export data to Excel file
+    df.to_excel(filename, index=False)
 
-def generate_dataframe():
-    df = create_dataframe()
-    messagebox.showinfo('DataFrame', f'{df}')
+# Create main window
+root = tk.Tk()
+root.title("CoinMarketCap Scraper")
 
-def build_gui():
-    root = tk.Tk()
-    root.title('CoinMarketCap Scraper')
+# Create input label and entry
+input_label = tk.Label(root, text="Enter value for no of coins to be scraped:")
+input_label.pack()
+input_entry = tk.Entry(root)
+input_entry.pack()
 
-    button_frame = tk.Frame(root)
-    button_frame.pack(pady=10)
+# Create export button
+export_button = tk.Button(root, text="Export to Excel", command=export_to_excel)
+export_button.pack()
 
-    scrape_button = tk.Button(button_frame, text='Scrape Data', command=generate_dataframe)
-    scrape_button.pack(side='left', padx=5)
-
-    export_button = tk.Button(button_frame, text='Export to Excel', command=export_to_excel)
-    export_button.pack(side='left', padx=5)
-
-    root.mainloop()
-
-if __name__ == '__main__':
-    build_gui()
+# Start main loop
+root.mainloop()

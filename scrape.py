@@ -36,7 +36,7 @@ def scrape_data():
     term = search_term.get()
 
     # Navigate to the website
-    driver.get(f'https://www.amazon.com/s?k={term}')
+    driver.get(f'https://www.amazon.co.in/s?k={term}')
 
     # Wait for the page to load
     time.sleep(5)
