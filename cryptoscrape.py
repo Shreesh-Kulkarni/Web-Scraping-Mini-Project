@@ -30,6 +30,7 @@ def scrape_data():
                 mcap=i.find_element(By.XPATH,mcapxpath).text
                 vol=i.find_element(By.XPATH,volxpath).text
                 circ=i.find_element(By.XPATH,circxpath).text
+                #hchange=i.find_element(By.XPATH,hourchangexpath)
 
                 #hchange=i.find_element(By.XPATH,hourchangexpath).text
                 value.extend([cprice,mcap,vol,circ])
@@ -37,8 +38,6 @@ def scrape_data():
                 k+=1
     except IndexError:
         return d
-
-
 
 
 #
