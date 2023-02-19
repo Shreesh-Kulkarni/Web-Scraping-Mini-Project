@@ -3,8 +3,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-# Wait for the element to be present
-
 import pandas as pd
 def scrape_data(c):
     url='https://coinmarketcap.com/'
