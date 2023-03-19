@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import pandas as pd
 def scrape_data(c):
-    url='https://coinmarketcap.com/'
+    url='https://coinmarketcap.com/?page=1'
     driver=webdriver.Chrome()
     driver.get(url)
     time.sleep(20)

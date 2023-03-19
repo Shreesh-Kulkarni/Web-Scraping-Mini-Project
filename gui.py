@@ -8,8 +8,8 @@ from PIL import Image, ImageTk
 def export_to_excel():
     # Get input value for c from the user
     c = int(input_entry.get())
-    if c > 500:
-        messagebox.showerror("Error", "Value for no of coins should not exceed 500")
+    if c > 100 or c<=0:
+        messagebox.showerror("Error", "Value for no of coins should be a natural number not more than 100")
         return
     # Scrape data from CoinMarketCap
     df = scrape_data(c)
