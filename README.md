@@ -2,7 +2,7 @@
 A python tool/wrapper which scrapes dynamic data from dynamic websites and stores it. The wrapper might be configured to scrape static data as well, come the necessity.
 
 ## Steps to run the scraper:-
-   1. Clone the repository and run the requirements.txt file by the following command in your terminal to install all the necessary packages:-
+   1. Clone the repository and run the `requirements.txt` file by the following command in your terminal to install all the necessary packages:-
     
     pip install -r requirements.txt
     
