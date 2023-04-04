@@ -9,4 +9,4 @@ A python tool/wrapper which scrapes dynamic data from dynamic websites and store
     5. There, you go, your crypto dataset is ready.
    
    
-   ## Note: The code is configured for the first 100 currencies of the website as thats the maximum elements that could fit in one webpage. If you want to scrape the next 100 currencies,simply change the webpage link to page2. Selenium's docs do not mention any feasible fix for this minor issue as dynamic data cannot be accessed from different webpages of the same parent webpage due to varying xpaths. 
+   ## Note: The code is configured for the first 100 currencies of the website as thats the maximum elements that could fit in one webpage. If you want to scrape the next 100 currencies,simply change the webpage link to page2 in the code. Selenium's docs do not mention any feasible fix for this minor issue as dynamic data cannot be accessed from different webpages of the same parent webpage due to varying xpaths. 
