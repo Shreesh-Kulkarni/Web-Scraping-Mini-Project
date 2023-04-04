@@ -4,7 +4,7 @@ A python tool/wrapper which scrapes dynamic data from dynamic websites and store
 ## Steps to run the scraper:-
    1. Clone the repository and run the requirements.txt file by the following command in your terminal to install all the necessary packages:-
     
-    > `pip install -r requirements.txt`
+    pip install -r requirements.txt
     
    2. Run the gui.py file.
    3. Input the size of the dataset
